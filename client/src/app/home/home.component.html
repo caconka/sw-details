@@ -1,7 +1,7 @@
 <div class="container">
-  <input [(ngModel)]="filmName">
+  <input [(ngModel)]="search">
   <section *ngIf="films">
-    <div *ngFor="let film of films">
+    <div *ngFor="let film of films | filter:'title':search">
       {{film.title}}
     </div>
   </section>
