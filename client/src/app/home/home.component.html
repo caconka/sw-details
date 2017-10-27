@@ -1,11 +1,11 @@
 <div class="container">
   <input [(ngModel)]="search">
-  <section *ngIf="films">
-    <div *ngFor="let film of films | filter:'title':search">
-      {{film.title}}
+  <section *ngIf="films" class="film-container">
+    <div *ngFor="let film of films | filter:'title':search" class="film-div">
+      <img [src]="film.img" alt="film.title" class="film-img">
     </div>
   </section>
-  <section *ngIf="people">
+  <section *ngIf="people" class="character-container">
     <div *ngFor="let character of people">
       {{character.name}}
     </div>

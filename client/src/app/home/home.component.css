@@ -1,0 +1,13 @@
+.film-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.film-div {
+  margin: 1%;
+}
+
+.film-img {
+  height: 350px;
+}
