@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 
+import { HistoryService } from '../services/history.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +16,8 @@ export class HomeComponent implements OnInit {
   people: Array<object>;
 
 
-  constructor(private router: Router, private http: Http) { }
+  constructor(private router: Router, private http: Http,
+              private historyService: HistoryService) { }
 
   ngOnInit() {
     this.http.get('https://swapi.co/api/films')
@@ -22,6 +25,7 @@ export class HomeComponent implements OnInit {
       if(res.status)
         this.setImgFilm(res.json().results);
       
+      this.films.sort(this.compare);
     });
 
     this.http.get('https://swapi.co/api/people')
@@ -29,6 +33,21 @@ export class HomeComponent implements OnInit {
       if(res.status)
         this.people = res.json().results;
     });
+
+    this.pushToHistory();
+  }
+
+  private compare(filmA,filmB) {
+    if (filmA.episode_id < filmB.episode_id)
+      return -1;
+    if (filmA.episode_id > filmB.episode_id)
+      return 1;
+    return 0;
+  }
+
+  private pushToHistory() {
+    const path = '';
+    this.historyService.checkCookie(path);
   }
 
   private setImgFilm(films) {
@@ -69,5 +88,10 @@ export class HomeComponent implements OnInit {
   searchFilm() {
 
   }
+
+  showDetails(filmId) {
+
+  }
+
 
 }

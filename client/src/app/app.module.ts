@@ -8,6 +8,8 @@ import { routes } from './routes';
 
 import { FilterPipe } from './filter.pipe';
 
+import { HistoryService } from './services/history.service';
+
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
@@ -23,7 +25,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule, RouterModule.forRoot(routes), FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

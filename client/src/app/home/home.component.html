@@ -1,8 +1,9 @@
 <div class="container">
+  <a [routerLink]="['details']">Details</a>
   <input [(ngModel)]="search">
   <section *ngIf="films" class="film-container">
     <div *ngFor="let film of films | filter:'title':search" class="film-div">
-      <img [src]="film.img" alt="film.title" class="film-img">
+      <img [src]="film.img" alt="film.title" class="film-img" (click)="showDetails(film.episode_id)">
     </div>
   </section>
   <section *ngIf="people" class="character-container">
