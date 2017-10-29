@@ -11,6 +11,7 @@ import { SwapiService } from '../services/swapi.service';
 export class DetailsComponent implements OnInit {
 
   film: object;
+  showDetails: boolean = false;
 
   constructor(private historyService: HistoryService, 
               private swapi: SwapiService, 
@@ -18,9 +19,18 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-    .subscribe(params => this.film = this.swapi.getFilms()[params['id']-1]);
+    .subscribe(params => {
+      this.film = this.swapi.getFilms()[params['id']-1];
+      this.setTimeOut();
+    });
 
     this.pushToHistory();
+  }
+
+  private setTimeOut() {
+    setTimeout(() => {
+      this.showDetails = true;
+    }, 30000);
   }
 
   private pushToHistory() {

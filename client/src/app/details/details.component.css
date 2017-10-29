@@ -1,0 +1,120 @@
+* { padding: 0; margin: 0; }
+
+body, html {
+	overflow: hidden;
+}
+
+#fade {
+  position: relative;
+  top: -25px;
+  height: 95vh;
+  background-image: linear-gradient(0deg, transparent, #171717 75%);
+  z-index: 1; 
+}
+
+#titles {
+  color: #ff6;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+	width: 99%;
+	height: 50em;
+  bottom: 0;
+  text-align: justify;
+  font-weight: 700;
+  font-size: 350%;
+	overflow: hidden;
+  display: flex;
+  justify-content: center;
+	transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(20deg);
+  z-index: -1;
+}
+
+#titles:after {
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	pointer-events: none;
+}
+
+#titlecontent {
+	position: absolute;
+  top: 100%;
+  width: 80%;
+  animation: scroll 100s linear 1s infinite;
+}
+
+#titlecontent p {
+  text-align: justify;
+}
+
+#titlecontent h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#titlecontent h3 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -180%; }
+}
+
+div.container {
+  width: 65%;
+  height: fit-content;
+  background: #282727;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.section {
+  height: 100%;
+}
+
+.poster {
+  margin: 1%;
+}
+
+.details {
+  margin: 1% 4%;
+}
+
+.details h2 {
+  margin-bottom: 1em;
+}
+
+.details h2 > span {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: lightgray;
+}
+
+.details p {
+  color: lightgray;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.row .title {
+  position: relative;
+  left: 0;
+  min-width: 75px;
+  text-align: right;
+  margin-right: 15px;
+}
