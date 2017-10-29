@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { HistoryService } from '../services/history.service';
+import { SwapiService } from '../services/swapi.service';
 
 @Component({
   selector: 'app-details',
@@ -9,7 +9,8 @@ import { HistoryService } from '../services/history.service';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private historyService: HistoryService) { }
+  constructor(private historyService: HistoryService, 
+              private swapi: SwapiService) { }
 
   ngOnInit() {
     this.pushToHistory();

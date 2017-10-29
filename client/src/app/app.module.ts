@@ -9,6 +9,7 @@ import { routes } from './routes';
 import { FilterPipe } from './filter.pipe';
 
 import { HistoryService } from './services/history.service';
+import { SwapiService } from './services/swapi.service';
 
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
@@ -16,16 +17,13 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DetailsComponent,
-    HomeComponent,
-    FilterPipe
+    AppComponent, DetailsComponent, HomeComponent, FilterPipe
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule,
     HttpModule
   ],
-  providers: [HistoryService],
+  providers: [HistoryService, SwapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
