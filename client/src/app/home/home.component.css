@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 5rem 0;
 }
 
 .film-div {
@@ -10,4 +11,43 @@
 
 .film-img {
   height: 350px;
+}
+
+.characters-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.character {
+  width: 160px;
+  margin: 10px;
+  background: #282727a4;
+  padding: 5px;
+  border-radius: 4px;
+  flex: none;
+}
+
+.character p {
+  margin: 0;
+  color: lightgray;
+  font-size: .9rem;
+}
+
+.character h3 {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.character .row {
+  display: flex;
+  margin-bottom: 0;
+}
+
+.row .title {
+  width: 45%;
+  text-align: right;
+  margin-right: .5rem;
+  white-space: nowrap;
 }

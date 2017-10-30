@@ -5,9 +5,29 @@
       <img [src]="film.img" [alt]="film.title" class="film-img" (click)="showDetails(film.episode_id)">
     </div>
   </section>
-  <section *ngIf="people" class="character-container">
-    <div *ngFor="let character of people">
-      {{character.name}}
+  <section *ngIf="people" class="characters-container">
+    <div *ngFor="let character of people" class="character">
+      <h3>{{character.name}}</h3>
+      <div class="row">
+        <div class="title"><p>Height</p></div>
+        <div><p>{{character.height}}</p></div>
+      </div>
+      <div class="row">
+        <div class="title"><p>Mass</p></div>
+        <div><p>{{character.mass}}</p></div>
+      </div>
+      <div class="row">
+        <div class="title"><p>Hair color</p></div>
+        <div><p>{{character.hair_color}}</p></div>
+      </div>
+      <div class="row">
+        <div class="title"><p>Skin color</p></div>
+        <div><p>{{character.skin_color}}</p></div>
+      </div>
+      <div class="row">
+        <div class="title"><p>Gender</p></div>
+        <div><p>{{character.gender}}</p></div>
+      </div>
     </div>
   </section>
 </div>

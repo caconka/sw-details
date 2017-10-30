@@ -1,5 +1,5 @@
 <div *ngIf="film">
-  <!-- <div *ngIf="!showDetails">
+  <div *ngIf="!showDetails">
     <div id="fade"></div>
     <div id="titles">
       <div id="titlecontent">
@@ -8,9 +8,9 @@
         <p>{{film.opening_crawl}}</p>
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <div class="container">
+  <div *ngIf="showDetails" class="container">
     <div class="poster section">
       <img [src]="film.img" [alt]="film.title">
     </div>
