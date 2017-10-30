@@ -14,10 +14,11 @@ import { SwapiService } from './services/swapi.service';
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DetailsComponent, HomeComponent, FilterPipe
+    AppComponent, DetailsComponent, HomeComponent, FilterPipe, HistoryComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule,

@@ -28,10 +28,10 @@ export class DetailsComponent implements OnInit {
     this.route.params
     .subscribe(params => {
       this.film = this.swapi.getFilms()[params['id']-1];
+      this.pushToHistory(params['id']);
       this.setTimeOut();
     });
 
-    this.pushToHistory();
   }
 
   private setTimeOut() {
@@ -40,8 +40,8 @@ export class DetailsComponent implements OnInit {
     }, 30000);
   }
 
-  private pushToHistory() {
-    const path = 'details';
+  private pushToHistory(id) {
+    const path = `details/${id}`;
     this.historyService.checkCookie(path);
   }
 

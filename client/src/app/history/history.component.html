@@ -1,0 +1,7 @@
+<div *ngIf="hisotry" class="history">
+  hola
+  <ul *ngFor="let page of history">
+    <li><a>{{page}}</a></li>
+  </ul>
+</div>
+<button (click)="toggleHistory">History</button>
