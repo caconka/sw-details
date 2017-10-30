@@ -34,18 +34,16 @@
 
 .characters-container {
   display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .character {
   width: 160px;
-  margin: 10px;
+  margin: 8px;
   background: #282727a4;
   padding: 5px;
   border-radius: 4px;
-  flex: none;
 }
 
 .character p {

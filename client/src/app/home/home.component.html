@@ -1,6 +1,6 @@
 <div class="container">
   <div id="header">
-    <input [(ngModel)]="search" id="search">
+    <input [(ngModel)]="search" id="search" placeholder="search film...">
   </div>
   <section *ngIf="films" class="film-container">
     <div *ngFor="let film of films | filter:'title':search" class="film-div">
