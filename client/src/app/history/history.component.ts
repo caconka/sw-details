@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HistoryService } from '../services/history.service';
 
 @Component({
@@ -9,11 +10,16 @@ import { HistoryService } from '../services/history.service';
 export class HistoryComponent implements OnInit {
 
   history: Array<string>;
+  showHistory: boolean = false;
 
-  constructor(private histService: HistoryService) { }
+  constructor(private histService: HistoryService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.history = this.histService.getHistory();
   }
-
+  
+  toggleHistory() {
+    this.history = this.histService.getHistory();
+    this.showHistory = !this.showHistory;
+  }
 }

@@ -29,7 +29,6 @@ export class HistoryService {
   }
 
   getHistory() {
-    console.log(this.history)
     return this.history;
   }
 }
