@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   filmName: string;
   films: Array<object>;
   people: Array<object>;
+  search: string;
 
 
   constructor(private router: Router, private swapi: SwapiService,
