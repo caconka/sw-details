@@ -15,10 +15,11 @@ import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DetailsComponent, HomeComponent, FilterPipe, HistoryComponent
+    AppComponent, DetailsComponent, HomeComponent, FilterPipe, HistoryComponent, LogoComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule,

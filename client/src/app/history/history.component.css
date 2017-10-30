@@ -36,6 +36,7 @@ ul {
 
 li {
   margin-bottom: .5rem;
+  cursor: pointer;
 }
 
 a {

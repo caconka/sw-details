@@ -1,5 +1,7 @@
 <div class="container">
-  <input [(ngModel)]="search">
+  <div id="header">
+    <input [(ngModel)]="search" id="search">
+  </div>
   <section *ngIf="films" class="film-container">
     <div *ngFor="let film of films | filter:'title':search" class="film-div">
       <img [src]="film.img" [alt]="film.title" class="film-img" (click)="showDetails(film.episode_id)">

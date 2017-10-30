@@ -1,3 +1,21 @@
+#header {
+  text-align: center;
+  margin-top: 3vh;
+}
+
+#search {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  width: 10%;
+}
+
+#search:focus {
+  padding: 10px;
+  width: 18%;
+  transition: width .5s ease, padding .5s ease;
+}
+
 .film-container {
   display: flex;
   flex-wrap: wrap;
@@ -11,6 +29,7 @@
 
 .film-img {
   height: 350px;
+  cursor: pointer;
 }
 
 .characters-container {

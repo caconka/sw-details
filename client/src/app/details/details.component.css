@@ -3,11 +3,17 @@
 body, html {
 	overflow: hidden;
 }
+#dark {
+  background: #171717;
+  height: 27vh;
+  margin: 0;
+  z-index: 1;
+}
 
 #fade {
   position: relative;
-  top: -25px;
-  height: 95vh;
+  height: 60vh;
+  margin: 0;
   background-image: linear-gradient(0deg, transparent, #171717 75%);
   z-index: 1; 
 }
