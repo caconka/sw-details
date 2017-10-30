@@ -1,7 +1,9 @@
 <div class="history-container">
   <div *ngIf="history && showHistory" class="history">
-    <ul *ngFor="let page of history">
-      <li><a [href]="page">{{page}}</a></li>
+    <ul>
+      <li *ngFor="let page of history">
+        <a (click)="goTo(page)">{{page}}</a>
+      </li>
     </ul>
   </div>
   <button (click)="toggleHistory()">History</button>

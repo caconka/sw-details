@@ -7,6 +7,7 @@
 }
 
 .history {
+  text-align: left;
   height: 30vh;
   background: #535353ec;
   color: lightgray;
@@ -29,6 +30,12 @@ button {
 
 ul {
   list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+li {
+  margin-bottom: .5rem;
 }
 
 a {

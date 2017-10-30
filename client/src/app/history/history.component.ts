@@ -22,4 +22,9 @@ export class HistoryComponent implements OnInit {
     this.history = this.histService.getHistory();
     this.showHistory = !this.showHistory;
   }
+
+  goTo(page) {
+    const path = page.split('/').splice(3);
+    this.router.navigate(path);
+  }
 }

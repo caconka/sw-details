@@ -10,17 +10,23 @@ export class HistoryService {
 
   private setCookie() {
     this.history = [BASEURL];
-    document.cookie = BASEURL;
+    document.cookie = `${BASEURL}; ${this.expires()}`;
   }
 
   private getCookie() {
     return document.cookie;
   }
 
+  private expires(){
+    const d = new Date();
+    d.setTime(d.getTime() + (24*60*60*1000));
+    return `expires= ${d.toUTCString()}`;
+  }
+
   private addToHistory(location) {
     const pathLocation = BASEURL + location;
     this.history.push(pathLocation);
-    document.cookie = this.history.join();    
+    document.cookie = `${this.history.join()}; ${this.expires()}`;    
   }
 
   checkCookie(location) {
