@@ -70,13 +70,42 @@ body, html {
 
 div.container {
   width: 65%;
-  height: fit-content;
   background: #282727;
   margin: 10vh auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
+
+@media screen and (max-width: 1600px) {
+  div.container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  div.container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  div.container {
+    flex-wrap: wrap;
+    width: 55%;
+  }
+
+  .poster {
+    text-align: center;
+  }
+
+  .poster img {
+    height: 70%;
+    width: 70%;
+    margin: 2rem;
+  } 
+}
+
 
 .section {
   height: 100%;
@@ -117,4 +146,9 @@ div.row {
   min-width: 75px;
   text-align: right;
   margin-right: 15px;
+}
+
+p.anchor {
+  cursor: pointer;
+  color: #ff6 !important;
 }

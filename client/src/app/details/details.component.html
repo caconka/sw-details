@@ -17,6 +17,7 @@
     <div class="details section">
       <h1>STAR WARS: EPISODE {{film.episode_id}}</h1>
       <h2>{{film.title}} <span>{{film.release_date}}</span></h2>
+
       <div class="row">
         <div class="title"><p>Director</p></div>
         <div><p>{{film.director}}</p></div>
@@ -28,6 +29,46 @@
       <div class="row">
         <div class="title"><p>Opening</p></div>
         <div><p>{{film.opening_crawl}}</p></div>
+      </div>
+      <div class="row">
+        <div class="title">
+          <p class="anchor" #pChar (click)="getChars(film.characters, pChar)">Characters</p>
+        </div>
+        <div *ngIf="characters.length !== 0">
+          <p><span *ngFor="let char of characters">{{char.name}}, </span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          <p class="anchor" #pPlan (click)="getPlanets(film.planets, pPlan)">Planets</p>
+        </div>
+        <div *ngIf="planets.length !== 0">
+          <p><span *ngFor="let planet of planets">{{planet.name}} - <i>{{planet.orbital_period}}</i>, </span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          <p class="anchor" #pStar (click)="getStarships(film.starships, pStar)">Starships</p>
+        </div>
+        <div *ngIf="starships.length !== 0">
+          <p><span *ngFor="let starship of starships">{{starship.name}} - <i>{{starship.model}}</i>, </span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          <p class="anchor" #pVehi (click)="getVehicles(film.vehicles, pVehi)">Vehicles</p>
+        </div>
+        <div *ngIf="vehicles.length !== 0">
+          <p><span *ngFor="let vehicle of vehicles">{{vehicle.name}} - <i>{{vehicle.model}}</i>, </span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          <p class="anchor" #pSpec (click)="getSpecies(film.species, pSpec)">Species</p>
+        </div>
+        <div *ngIf="species.length !== 0">
+          <p><span *ngFor="let specie of species">{{specie.name}}, </span></p>
+        </div>
       </div>
     </div>
   </div>
